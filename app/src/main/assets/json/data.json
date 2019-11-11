@@ -1,0 +1,53 @@
+{
+  "users": [{
+    "user_id": 1364285,
+    "profile_image":"https://thispersondoesnotexist.com/image",
+    "user_tag": "danger01",
+    "password": "dg123",
+    "name": "Ricardo",
+    "last_name": "Moreno Pineda",
+    "status": "normal",
+    "bachelor_degree": "IIS",
+    "user_type": "admin"
+  }, {
+    "user_id": 1367206,
+    "profile_image":"https://thispersondoesnotexist.com/image",
+    "user_tag": "drng45",
+    "password": "drng123",
+    "name": "Mauricio Alexander",
+    "last_name": "Rivas P",
+    "status": "banned",
+    "bachelor_degree": "ITC",
+    "user_type": "user"
+  }, {
+    "user_id": 1364077,
+    "profile_image":"https://thispersondoesnotexist.com/image",
+    "user_tag": "bundle05",
+    "password": "bdl123",
+    "name": "Jesús Farid",
+    "last_name": "Perez Domínguez",
+    "status": "cond",
+    "bachelor_degree": "IBT",
+    "user_type": "staff"
+  }, {
+    "user_id": 1360954,
+    "profile_image":"https://thispersondoesnotexist.com/image",
+    "user_tag": "madcaptainmorga",
+    "password": "mdcm123",
+    "name": "Irving Yabdiel",
+    "last_name": "Salazar Ruiz",
+    "status": "normal",
+    "bachelor_degree": "IMT",
+    "user_type": "staff"
+  }, {
+    "user_id": 1362064,
+    "profile_image":"https://thispersondoesnotexist.com/image",
+    "user_tag": "elpandaguapo",
+    "password": "epgm123",
+    "name": "Carlos Arieman",
+    "last_name": "Illescas Madariaga",
+    "status": "normal",
+    "bachelor_degree": "LED",
+    "user_type": "staff"
+  }]
+}
