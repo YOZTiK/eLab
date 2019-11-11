@@ -6,50 +6,67 @@
     android:layout_height="match_parent"
     tools:context=".SplashAct">
 
-    <ImageView
-        android:id="@+id/ivSplash"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#4ED4DE"
-        tools:layout_editor_absoluteX="75dp"
-        tools:layout_editor_absoluteY="0dp" />
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/colorPrimaryDark"
+        tools:ignore="MissingConstraints" >
 
-    <TextView
-        android:id="@+id/ivLogo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="100dp"
-        android:text="eLab"
-        android:textColor="#FFF"
-        android:textSize="44sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/ivSubtitle"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="28dp"
-        android:lineSpacingExtra="8dp"
-        android:text="Try a new experience of esports"
-        android:textColor="#FFF"
-        android:textSize="22sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivLogo" />
+            <ImageView
+                android:id="@+id/ivSplash"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#418FDE"
+                tools:layout_editor_absoluteX="75dp"
+                tools:layout_editor_absoluteY="0dp" />
 
-    <TextView
-        android:id="@+id/ivBtn"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="108dp"
-        android:layout_marginStart="36dp"
-        android:lineSpacingExtra="8dp"
-        android:text="Get Started"
-        android:textColor="#FFF"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+            <TextView
+                android:id="@+id/ivLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="100dp"
+                android:text="eLab"
+                android:textColor="#FFF"
+                android:textSize="44sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/ivSubtitle"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="28dp"
+                android:lineSpacingExtra="8dp"
+                android:text="Try a new experience of esports"
+                android:textColor="#FFF"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivLogo" />
+
+            <TextView
+                android:id="@+id/ivBtn"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="265dp"
+                android:layout_marginBottom="108dp"
+                android:lineSpacingExtra="8dp"
+                android:text="Get Started"
+                android:textColor="#FFF"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivSubtitle" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
