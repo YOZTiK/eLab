@@ -116,12 +116,12 @@ public class SearchActivity extends AppCompatActivity {
         Intent i = new Intent(this, DetailActivity.class);
         //Log.d("RESULT PRODUCTS!!!", "RESULT OF SEARCH: " + resultProducts);
         //Log.d("NAME PRODUCT", "RESULT OF SELECT: " + resultProducts.get(adapterPosition).user_tag);
-        i.putExtra("user_tag", resultUsers.get(adapterPosition).user_tag);
         //Log.d("DESCRIPTION PRODUCT", "RESULT OF SELECT: " + resultProducts.get(adapterPosition).user_name);
-        i.putExtra("desc", resultUsers.get(adapterPosition).user_name);
+        i.putExtra("user_id", resultUsers.get(adapterPosition).user_id);
+        i.putExtra("user_name", resultUsers.get(adapterPosition).user_name);
+        i.putExtra("user_tag", resultUsers.get(adapterPosition).user_tag);
         i.putExtra("profile_image", resultUsers.get(adapterPosition).profile_image);
-        i.putExtra("index", resultUsers.get(adapterPosition).user_id);
-        i.putExtra("rating", ""+resultUsers.get(adapterPosition).ranking);
+        i.putExtra("ranking", ""+resultUsers.get(adapterPosition).ranking);
         Log.d("RATING ON DB", "STARTS: " + resultUsers.get(adapterPosition).ranking);
         startActivity(i);
     }

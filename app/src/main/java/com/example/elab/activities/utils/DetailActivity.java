@@ -33,18 +33,18 @@ public class DetailActivity extends AppCompatActivity {
 
         users = ViewModelProviders.of(this).get(UserViewModel.class);
 
-        final String id = ""+getIntent().getExtras().getString("index");
-        String coname = getIntent().getExtras().getString("user_tag");
-        String codesc = getIntent().getExtras().getString("desc");
-        String imageUrl = getIntent().getExtras().getString("profile_image");
-        final int ranking = Integer.parseInt(getIntent().getExtras().getString("rating"));
+        final String user_id = ""+getIntent().getExtras().getString("user_id");
+        String user_name = getIntent().getExtras().getString("user_name");
+        String user_tag = getIntent().getExtras().getString("user_tag");
+        String profile_image = getIntent().getExtras().getString("profile_image");
+        final int ranking = Integer.parseInt(getIntent().getExtras().getString("ranking"));
 
         Log.d("RATING", ranking+"");
 
-        coName.setText(coname+"");
-        coDescription.setText(codesc+"");
+        coName.setText(user_name+"");
+        coDescription.setText(user_tag+"");
 
-        new DownLoadImageTask(iv).execute(imageUrl);
+        new DownLoadImageTask(iv).execute(profile_image);
 
         RatingBar ratingBar = findViewById(R.id.ratingBar);
         ratingBar.setRating(ranking);
@@ -53,7 +53,7 @@ public class DetailActivity extends AppCompatActivity {
             public void onRatingChanged(RatingBar ratingBar, float rating,
                                         boolean fromUser) {
                 Log.d("onRatingChanged", "");
-                UpdateTask ut = new UpdateTask(getApplicationContext(), null, id, (int) ratingBar.getRating());
+                UpdateTask ut = new UpdateTask(getApplicationContext(), null, user_id, (int) ratingBar.getRating());
                 ut.execute();
             }
         });
