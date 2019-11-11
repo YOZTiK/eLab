@@ -1,4 +1,4 @@
-package com.example.elab;
+package com.example.elab.main.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.google.android.gms.vision.barcode.BarcodeDetector;
+import com.example.elab.R;
 
 public class RegistryActivity extends AppCompatActivity {
 
@@ -31,6 +31,6 @@ public class RegistryActivity extends AppCompatActivity {
         int requestCode = 0;
         ActivityCompat.requestPermissions(RegistryActivity.this, new String[] {Manifest.permission.CAMERA}, requestCode);
 
-        startActivity(new Intent(RegistryActivity.this,ScannerActivity.class));
+        startActivity(new Intent(RegistryActivity.this, ScannerActivity.class));
     }
 }

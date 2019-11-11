@@ -3,6 +3,8 @@
     package="com.example.elab">
 
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,12 +13,21 @@
         android:roundIcon="@mipmap/ic_elab_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ScannerActivity"></activity>
-        <activity android:name=".InfoActivity" />
-        <activity android:name=".UsersControlActivity" />
-        <activity android:name=".RegistryActivity" />
-        <activity android:name=".SearchActivity" />
-        <activity android:name=".StartActivity">
+        <service
+            android:name=".services.InternetConnectionService"
+            android:enabled="true"
+            android:exported="true"></service>
+
+        <activity android:name=".activities.utils.VolleyActivity" />
+        <activity android:name=".activities.utils.DetailActivity" />
+        <activity android:name=".main.activities.ScannerActivity" />
+        <activity android:name=".main.activities.InfoActivity" />
+        <activity android:name=".main.activities.UsersControlActivity" />
+        <activity android:name=".main.activities.RegistryActivity" />
+        <activity android:name=".main.activities.SearchActivity">
+
+        </activity>
+        <activity android:name=".main.activities.InfoActivity$StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,8 +35,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.login.LoginActivity" />
-        <activity android:name=".HomeAct" />
-        <activity android:name=".SplashAct" />
+        <activity android:name=".main.activities.HomeAct" />
+        <activity android:name=".main.activities.InfoActivity$SplashAct" />
     </application>
 
 </manifest>

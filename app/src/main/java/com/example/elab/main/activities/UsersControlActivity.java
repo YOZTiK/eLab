@@ -1,8 +1,10 @@
-package com.example.elab;
+package com.example.elab.main.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.elab.R;
 
 public class UsersControlActivity extends AppCompatActivity {
 

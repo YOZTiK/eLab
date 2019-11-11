@@ -21,16 +21,13 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.elab.main.activities.InfoActivity;
 import com.example.elab.R;
-import com.example.elab.SplashAct;
-import com.example.elab.ui.login.LoginViewModel;
-import com.example.elab.ui.login.LoginViewModelFactory;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -113,7 +110,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void run() {
                         // Do something after 5s = 5000ms
                         loadingProgressBar.setVisibility(View.GONE);
-                        Intent goToNextActivity = new Intent(getApplicationContext(), SplashAct.class);
+                        Intent goToNextActivity = new Intent(getApplicationContext(), InfoActivity.SplashAct.class);
                         startActivity(goToNextActivity);
                     }
                 }, 5000);

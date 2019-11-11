@@ -1,4 +1,4 @@
-package com.example.elab;
+package com.example.elab.main.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.elab.R;
 
 public class HomeAct extends AppCompatActivity {
 
@@ -86,8 +88,8 @@ public class HomeAct extends AppCompatActivity {
 
     public void goToSearch(View view) {
 
-//        Intent goToNextActivity = new Intent(getApplicationContext(), SearchActivity.class);
-//        startActivity(goToNextActivity);
+        Intent goToNextActivity = new Intent(getApplicationContext(), SearchActivity.class);
+        startActivity(goToNextActivity);
 
     }
 

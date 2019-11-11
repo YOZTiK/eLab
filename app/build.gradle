@@ -29,6 +29,15 @@ dependencies {
     implementation 'com.google.android.gms:play-services-vision:19.0.0'
     implementation 'com.google.android.gms:play-services-auth:17.0.0'
     implementation 'me.dm7.barcodescanner:zxing:1.9.13'
+    implementation 'androidx.room:room-runtime:2.1.0'
+    annotationProcessor 'androidx.room:room-compiler:2.1.0'
+    def recyclerview_version = "1.0.0"
+    implementation "androidx.recyclerview:recyclerview:$recyclerview_version"
+    // For control over item selection of both touch and mouse driven selection
+    implementation "androidx.recyclerview:recyclerview-selection:$recyclerview_version"
+    implementation 'com.android.volley:volley:1.1.1'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
