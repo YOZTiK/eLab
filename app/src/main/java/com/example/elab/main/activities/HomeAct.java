@@ -109,7 +109,7 @@ public class HomeAct extends AppCompatActivity {
 
     public void goToInfo(View view) {
 
-//        Intent goToNextActivity = new Intent(getApplicationContext(), InfoActivity.class);
+//        Intent goToNextActivity = new Intent(getApplicationContext(), AnimationActivity.class);
 //        startActivity(goToNextActivity);
 
         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://forms.gle/ozEtQosKaJcCnzkm6"));

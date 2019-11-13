@@ -26,7 +26,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.elab.main.activities.InfoActivity;
+import com.example.elab.main.activities.AnimationActivity;
 import com.example.elab.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -110,7 +110,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void run() {
                         // Do something after 5s = 5000ms
                         loadingProgressBar.setVisibility(View.GONE);
-                        Intent goToNextActivity = new Intent(getApplicationContext(), InfoActivity.SplashAct.class);
+                        Intent goToNextActivity = new Intent(getApplicationContext(), AnimationActivity.SplashAct.class);
                         startActivity(goToNextActivity);
                     }
                 }, 5000);

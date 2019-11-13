@@ -11,12 +11,13 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.elab.R;
 import com.example.elab.ui.login.LoginActivity;
 
-public class InfoActivity extends AppCompatActivity {
+public class AnimationActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,6 +96,8 @@ public class InfoActivity extends AppCompatActivity {
     public static class StartActivity extends AppCompatActivity {
 
         ImageView ivLetterE, ivIcon, ivLettersAB;
+        RelativeLayout topLayer;
+        Animation bigtosmall;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -102,11 +105,18 @@ public class InfoActivity extends AppCompatActivity {
             setContentView(R.layout.activity_start);
 
             final Handler handler = new Handler();
+            bigtosmall = AnimationUtils.loadAnimation(this, R.anim.bigtosmall);
 
             ivLetterE = findViewById(R.id.ivLetterE);
             ivIcon = findViewById(R.id.ivIcon);
             ivLettersAB = findViewById(R.id.ivLettersAB);
+            topLayer = findViewById(R.id.topLayer);
 
+//            ivIcon.setScaleX(50);
+//            ivIcon.setScaleY(50);
+
+            ivIcon.startAnimation(bigtosmall);
+            topLayer.startAnimation(bigtosmall);
             ivIcon.animate().alpha(1).setDuration(800).setStartDelay(50).start();
 
             ivLetterE.setTranslationX(400);

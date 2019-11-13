@@ -4,8 +4,8 @@
     android:startOffset="300">
 
     <scale
-        android:fromXScale="0.0"
-        android:fromYScale="0.0"
+        android:fromXScale="3.0"
+        android:fromYScale="3.0"
         android:toYScale="1"
         android:toXScale="1"
         android:pivotY="50%"
@@ -16,6 +16,6 @@
         android:fromAlpha="0.0"
         android:toAlpha="1.0"
         android:duration="800"
-    />
+        />
 
 </set>

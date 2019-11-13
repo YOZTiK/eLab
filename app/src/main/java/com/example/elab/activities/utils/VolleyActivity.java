@@ -35,8 +35,8 @@ public class VolleyActivity extends AppCompatActivity {
 
         RequestQueue queue = Volley.newRequestQueue(this);
 
-//        String url = "http://10.0.2.2:8000";
-        String url = "http://192.168.1.72:8000";
+        String url = "http://10.0.2.2:8000";
+//        String url = "http://192.168.1.72:8000";
 
         Log.d("URL to connect with svr", "String: "+url);
         final SelectTask databaseTask = new SelectTask(getApplicationContext(), null);
