@@ -125,15 +125,5 @@ public class SearchActivity extends AppCompatActivity {
         Log.d("RATING ON DB", "STARTS: " + resultUsers.get(adapterPosition).ranking);
         startActivity(i);
     }
-
-    public void showMeDBInfo(View view) {
-        users.searchUsers(getApplicationContext(), "%%").observe(this, new Observer<List<User>>() {
-            @Override
-            public void onChanged(List<User> products) {
-                //getAll(products);
-                Log.d("DB INFO FOUND", "PRODUCTS: " + products);
-            }
-        });
-    }
     
 }

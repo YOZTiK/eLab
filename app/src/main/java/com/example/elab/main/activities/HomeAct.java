@@ -95,7 +95,7 @@ public class HomeAct extends AppCompatActivity {
 
     public void goToRegistry(View view) {
 
-        Intent goToNextActivity = new Intent(getApplicationContext(), RegistryActivity.class);
+        Intent goToNextActivity = new Intent(getApplicationContext(), QRRegistryActivity.class);
         startActivity(goToNextActivity);
 
     }

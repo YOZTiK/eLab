@@ -153,7 +153,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="12dp"
                             android:layout_marginTop="6dp"
-                            android:text="Registrar nuevo Gacmer"
+                            android:text="Registrar préstamo"
                             android:textColor="#89B9B9"
                             android:textSize="18dp" />
 

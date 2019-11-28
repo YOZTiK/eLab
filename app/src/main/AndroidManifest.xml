@@ -13,20 +13,21 @@
         android:roundIcon="@mipmap/ic_elab_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".main.activities.UserRegistryActivity"></activity>
+        <activity android:name=".main.activities.users_contol" />
+
         <service
             android:name=".services.InternetConnectionService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
 
         <activity android:name=".activities.utils.VolleyActivity" />
         <activity android:name=".activities.utils.DetailActivity" />
         <activity android:name=".main.activities.ScannerActivity" />
         <activity android:name=".main.activities.AnimationActivity" />
         <activity android:name=".main.activities.UsersControlActivity" />
-        <activity android:name=".main.activities.RegistryActivity" />
-        <activity android:name=".main.activities.SearchActivity">
-
-        </activity>
+        <activity android:name=".main.activities.QRRegistryActivity" />
+        <activity android:name=".main.activities.SearchActivity" />
         <activity android:name=".main.activities.AnimationActivity$StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.example.elab.R;
 
-public class RegistryActivity extends AppCompatActivity {
+public class QRRegistryActivity extends AppCompatActivity {
 
     public static TextView tvResult;
     Button btnScanner;
@@ -20,7 +20,7 @@ public class RegistryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registry);
+        setContentView(R.layout.activity_qr_registry);
 
         tvResult = findViewById(R.id.tvResult);
         btnScanner = findViewById(R.id.btnScanner);
@@ -29,8 +29,8 @@ public class RegistryActivity extends AppCompatActivity {
 
     public void goToReadQR(View view) {
         int requestCode = 0;
-        ActivityCompat.requestPermissions(RegistryActivity.this, new String[] {Manifest.permission.CAMERA}, requestCode);
+        ActivityCompat.requestPermissions(QRRegistryActivity.this, new String[] {Manifest.permission.CAMERA}, requestCode);
 
-        startActivity(new Intent(RegistryActivity.this, ScannerActivity.class));
+        startActivity(new Intent(QRRegistryActivity.this, ScannerActivity.class));
     }
 }

@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.example.elab.R;
 import com.example.elab.database.UpdateTask;
 import com.example.elab.database.UserDatabase;
+import com.squareup.picasso.Picasso;
 
 import java.io.InputStream;
 import java.net.URL;
@@ -44,7 +45,10 @@ public class DetailActivity extends AppCompatActivity {
         coName.setText(user_name+"");
         coDescription.setText(user_tag+"");
 
-        new DownLoadImageTask(iv).execute(profile_image);
+        //new DownLoadImageTask(iv).execute(profile_image);
+        Picasso.get()
+                .load(profile_image)
+                .into(iv);
 
         RatingBar ratingBar = findViewById(R.id.ratingBar);
         ratingBar.setRating(ranking);
@@ -60,39 +64,4 @@ public class DetailActivity extends AppCompatActivity {
 
     }
 
-    private class DownLoadImageTask extends AsyncTask<String,Void, Bitmap> {
-        ImageView imageView;
-
-        public DownLoadImageTask(ImageView imageView){
-            this.imageView = imageView;
-        }
-
-        /*
-            doInBackground(Params... params)
-                Override this method to perform a computation on a background thread.
-         */
-        protected Bitmap doInBackground(String...urls){
-            String urlOfImage = urls[0];
-            Bitmap logo = null;
-            try{
-                InputStream is = new URL(urlOfImage).openStream();
-                /*
-                    decodeStream(InputStream is)
-                        Decode an input stream into a bitmap.
-                 */
-                logo = BitmapFactory.decodeStream(is);
-            }catch(Exception e){ // Catch the download exception
-                e.printStackTrace();
-            }
-            return logo;
-        }
-
-        /*
-            onPostExecute(Result result)
-                Runs on the UI thread after doInBackground(Params...).
-         */
-        protected void onPostExecute(Bitmap result){
-            imageView.setImageBitmap(result);
-        }
-    }
 }

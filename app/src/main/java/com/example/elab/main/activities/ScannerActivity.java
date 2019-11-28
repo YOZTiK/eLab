@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.example.elab.main.activities.RegistryActivity;
 import com.google.zxing.Result;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
@@ -23,7 +22,7 @@ public class ScannerActivity extends AppCompatActivity implements ZXingScannerVi
 
     @Override
     public void handleResult(Result rawResult) {
-        RegistryActivity.tvResult.setText(rawResult.getText());
+        QRRegistryActivity.tvResult.setText(rawResult.getText());
         onBackPressed();
     }
 
