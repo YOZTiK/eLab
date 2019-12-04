@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.Toast;
 
-import com.example.elab.database.Gacmer;
+import com.example.elab.database.User;
 import com.example.elab.main.activities.RegistryActivity;
 import com.google.zxing.Result;
 
@@ -40,7 +40,7 @@ public class ScannerActivity extends AppCompatActivity implements ZXingScannerVi
 
         if(isCorrect){
             //Set the gacmer in the other activity.
-            RegistryActivity.gacmer = new Gacmer(
+            RegistryActivity.user = new User(
                     arrOfStr[0],
                     arrOfStr[1],
                     arrOfStr[2],

@@ -13,7 +13,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.elab.R;
-import com.example.elab.database.Gacmer;
 import com.example.elab.database.SelectTask;
 import com.example.elab.database.User;
 import com.google.firebase.database.DataSnapshot;
@@ -38,8 +37,8 @@ public class VolleyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_volley);
 
-        //getJsonRequest();
-        getDataFromFirebase();
+        getJsonRequest();
+        //getDataFromFirebase();
     }
 
     public void getJsonRequest() {
@@ -145,7 +144,7 @@ public class VolleyActivity extends AppCompatActivity {
                     e.status = status;
                     e.user_type = user_type;
                     e.bachelor_degree = bachelor_degree;
-                    e.ranking = 0;
+                    e.ranking = ranking;
 
                     userList.add(e);
 

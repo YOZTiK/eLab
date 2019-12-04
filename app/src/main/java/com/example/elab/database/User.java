@@ -49,6 +49,21 @@ public class User {
         bachelor_degree + ", " +
         ranking;
     }
+    public User(){
+
+    }
+
+    public User(String user_id, String profile_image, String user_tag, String name, String last_name, String status, String user_type, String bachelor_degree, int ranking){
+        this.user_id = user_id;
+        this.profile_image = profile_image;
+        this.user_tag = user_tag;
+        this.user_name = name;
+        this.last_name = last_name;
+        this.status = status;
+        this.user_type = user_type;
+        this.bachelor_degree = bachelor_degree;
+        this.ranking = ranking;
+    }
 
 
 }

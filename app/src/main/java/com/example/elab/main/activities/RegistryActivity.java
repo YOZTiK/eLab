@@ -12,14 +12,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.elab.R;
-import com.example.elab.database.Gacmer;
+import com.example.elab.database.User;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class RegistryActivity extends AppCompatActivity {
 
     public static TextView tvResult;
-    public static Gacmer gacmer;
+    public static User user;
 
     private DatabaseReference mDatabase;
 
@@ -43,7 +43,7 @@ public class RegistryActivity extends AppCompatActivity {
 
     public void saveInFirebase(View view){
         //SAVE THE USER IN FIREBASE!
-        mDatabase.child("gacmers").child(gacmer.user_id).setValue(gacmer);
+        mDatabase.child("gacmers").child(user.user_id).setValue(user);
         Toast.makeText(RegistryActivity.this, "User saved successfully!", Toast.LENGTH_LONG).show();
     }
 

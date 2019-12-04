@@ -10,13 +10,12 @@ import android.widget.RatingBar;
 import android.widget.Toast;
 
 import com.example.elab.R;
-import com.example.elab.database.Gacmer;
 import com.example.elab.database.UpdateTask;
+import com.example.elab.database.User;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
-import static com.example.elab.main.activities.RegistryActivity.gacmer;
 
 public class ModifyUserActivity extends AppCompatActivity {
 
@@ -95,7 +94,7 @@ public class ModifyUserActivity extends AppCompatActivity {
             return;
         }
 
-        Gacmer gacmer = new Gacmer(
+        User gacmer = new User(
                 user_id,
                 profile_image,
                 user_tag,
