@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.elab.R;
 import com.example.elab.activities.utils.DetailActivity;
@@ -84,8 +85,10 @@ public class SearchActivity extends AppCompatActivity {
                 //getAll(products);
                 Log.d("SET resultProducts", "FOUND: " + products);
                 resultUsers = products;
-
                 adapter.setProducts(products);
+                if(adapter.getItemCount() <= 0){
+                    Toast.makeText(SearchActivity.this, "No users found... Update the database!", Toast.LENGTH_LONG).show();
+                }
 //                Log.d("Changed HERE!!!", "ENTERED: " + products);
             }
         });
@@ -107,7 +110,7 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     public void goToWeb(View view) {
-        Log.d("goToWeb Method", "From: " + view);
+        Toast.makeText(SearchActivity.this, "Database updated...", Toast.LENGTH_LONG).show();
         Intent goToNextActivity = new Intent(getApplicationContext(), VolleyActivity.class);
         startActivity(goToNextActivity);
     }
@@ -117,11 +120,17 @@ public class SearchActivity extends AppCompatActivity {
         //Log.d("RESULT PRODUCTS!!!", "RESULT OF SEARCH: " + resultProducts);
         //Log.d("NAME PRODUCT", "RESULT OF SELECT: " + resultProducts.get(adapterPosition).user_tag);
         //Log.d("DESCRIPTION PRODUCT", "RESULT OF SELECT: " + resultProducts.get(adapterPosition).user_name);
+
         i.putExtra("user_id", resultUsers.get(adapterPosition).user_id);
-        i.putExtra("user_name", resultUsers.get(adapterPosition).user_name);
-        i.putExtra("user_tag", resultUsers.get(adapterPosition).user_tag);
         i.putExtra("profile_image", resultUsers.get(adapterPosition).profile_image);
+        i.putExtra("user_tag", resultUsers.get(adapterPosition).user_tag);
+        i.putExtra("name", resultUsers.get(adapterPosition).user_name);
+        i.putExtra("last_name", resultUsers.get(adapterPosition).last_name);
+        i.putExtra("status", resultUsers.get(adapterPosition).status);
+        i.putExtra("user_type", resultUsers.get(adapterPosition).user_type);
+        i.putExtra("bachelor_degree", resultUsers.get(adapterPosition).bachelor_degree);
         i.putExtra("ranking", ""+resultUsers.get(adapterPosition).ranking);
+
         Log.d("RATING ON DB", "STARTS: " + resultUsers.get(adapterPosition).ranking);
         startActivity(i);
     }

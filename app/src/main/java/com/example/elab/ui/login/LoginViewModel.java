@@ -10,6 +10,7 @@ import com.example.elab.data.LoginRepository;
 import com.example.elab.data.Result;
 import com.example.elab.data.model.LoggedInUser;
 import com.example.elab.R;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginViewModel extends ViewModel {
 

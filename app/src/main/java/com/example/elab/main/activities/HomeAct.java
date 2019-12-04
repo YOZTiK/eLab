@@ -1,5 +1,6 @@
 package com.example.elab.main.activities;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.elab.R;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeAct extends AppCompatActivity {
 
@@ -20,10 +22,14 @@ public class HomeAct extends AppCompatActivity {
     ImageView ivIlls;
     Animation smalltobig, smalltobig2;
 
+    private FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        mAuth = FirebaseAuth.getInstance();
 
         smalltobig2 = AnimationUtils.loadAnimation(this, R.anim.smalltobig);
 
@@ -102,19 +108,21 @@ public class HomeAct extends AppCompatActivity {
 
     public void goToUsersControl(View view) {
 
-//        Intent goToNextActivity = new Intent(getApplicationContext(), UsersControlActivity.class);
-//        startActivity(goToNextActivity);
+        Intent goToNextActivity = new Intent(getApplicationContext(), SearchActivity.class);
+        startActivity(goToNextActivity);
+        //Instead of users control...
 
     }
 
     public void goToInfo(View view) {
 
-//        Intent goToNextActivity = new Intent(getApplicationContext(), InfoActivity.class);
-//        startActivity(goToNextActivity);
+        Intent goToNextActivity = new Intent(getApplicationContext(), WebViewActivity.class);
+        startActivity(goToNextActivity);
 
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://forms.gle/ozEtQosKaJcCnzkm6"));
-        startActivity(browserIntent);
+    }
 
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

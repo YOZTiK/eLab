@@ -123,7 +123,7 @@ public class InfoActivity extends AppCompatActivity {
                     Intent goToNextActivity = new Intent(getApplicationContext(), LoginActivity.class);
                     startActivity(goToNextActivity);
                 }
-            }, 3000);
+            }, 2000);
 
         }
     }

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".activities.utils.ModifyUserActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_marginTop="50dp"
+                android:id="@+id/userImage"
+                android:layout_width="200dip"
+                android:layout_height="200dip"
+                android:scaleType="fitXY"
+                android:layout_gravity="center" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp"></View>
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:text="Name"
+                android:layout_gravity="center"></TextView>
+            <EditText
+                android:id="@+id/nameEditText"
+                style="@style/company_title"
+                android:hint="Name"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp"></View>
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:text="Last Name"
+                android:layout_gravity="center"></TextView>
+            <EditText
+                android:id="@+id/lastNameEditText"
+                style="@style/company_title"
+                android:hint="Last Name"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp"></View>
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:text="Status"
+                android:layout_gravity="center"></TextView>
+            <EditText
+                android:id="@+id/statusEditText"
+                style="@style/company_title"
+                android:hint="Status"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp"></View>
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:text="Type"
+                android:layout_gravity="center"></TextView>
+            <EditText
+                android:id="@+id/userTypeEditText"
+                style="@style/company_title"
+                android:hint="Type"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp"></View>
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:text="Degree"
+                android:layout_gravity="center"></TextView>
+            <EditText
+                android:id="@+id/bachelorDegreeEditText"
+                style="@style/company_title"
+                android:hint="Degree"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp"></View>
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:stepSize="1.0"
+                android:rating="0.0"
+                android:layout_gravity="center"/>
+
+            <Button
+                android:layout_marginTop="50dp"
+                android:id="@+id/buttonCambios"
+                android:layout_width="170dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textColor="@android:color/white"
+                android:textStyle="normal"
+                android:text="Modificar"
+                android:onClick="saveModifiedUser"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
