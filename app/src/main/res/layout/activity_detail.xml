@@ -17,27 +17,108 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
-                android:layout_marginTop="50dp"
-                android:id="@+id/iv"
-                android:layout_width="200dip"
-                android:layout_height="200dip"
-                android:scaleType="fitXY"
-                android:layout_gravity="center" />
+            <LinearLayout
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/userProfileImage"
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="130dp"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_marginTop="20dp"
+                        android:id="@+id/userNameText"
+                        style="@style/company_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="User Name"
+                        android:fontFamily="monospace"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+                    <TextView
+                        android:id="@+id/lastNameText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Last Name"
+                        android:fontFamily="monospace"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="60dp"></View>
 
             <TextView
-                android:id="@+id/companyName"
+                android:id="@+id/userTagText"
                 style="@style/company_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:fontFamily="monospace"
+                android:text="User tag: USERTAG"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="30dp"></View>
 
             <TextView
-                android:id="@+id/companyDescription"
+                android:id="@+id/userStatusText"
                 style="@style/company_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:fontFamily="monospace"
+                android:text="User Status : Active"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="30dp"></View>
+
+            <TextView
+                android:id="@+id/userTypeText"
+                style="@style/company_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="monospace"
+                android:text="User type: USERTYPE"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="35dp"></View>
+
+            <TextView
+                android:id="@+id/score"
+                style="@style/company_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="monospace"
+                android:text="Score:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
 
             <RatingBar
                 android:id="@+id/ratingBar"
@@ -46,6 +127,7 @@
                 android:numStars="5"
                 android:stepSize="1.0"
                 android:rating="0.0"
+                android:isIndicator="true"
                 android:layout_gravity="center"/>
 
             <Button

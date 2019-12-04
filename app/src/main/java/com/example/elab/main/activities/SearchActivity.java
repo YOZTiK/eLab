@@ -43,22 +43,16 @@ public class SearchActivity extends AppCompatActivity {
 
 //        Intent timerToast = new Intent(getApplicationContext(), service.class);
 //        getApplicationContext().startService(timerToast);
+
+        goToWeb(null);
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        users.searchUsers(getApplicationContext(), src).observe(this, new Observer<List<User>>() {
-            @Override
-            public void onChanged(List<User> users) {
-                //getAll(users);
-                Log.d("SET resultProducts", "FOUND: " + users);
-                resultUsers = users;
+        goToWeb(null);
+        doAction(null);
 
-                adapter.setProducts(users);
-//                Log.d("Changed HERE!!!", "ENTERED: " + users);
-            }
-        });
     }
 
     public void getAll(List<User> users) {
@@ -87,7 +81,7 @@ public class SearchActivity extends AppCompatActivity {
                 resultUsers = products;
                 adapter.setProducts(products);
                 if(adapter.getItemCount() <= 0){
-                    Toast.makeText(SearchActivity.this, "No users found... Update the database!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(SearchActivity.this, "No hay usuarios, actualiza!", Toast.LENGTH_LONG).show();
                 }
 //                Log.d("Changed HERE!!!", "ENTERED: " + products);
             }
@@ -110,7 +104,7 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     public void goToWeb(View view) {
-        Toast.makeText(SearchActivity.this, "Database updated...", Toast.LENGTH_LONG).show();
+        Toast.makeText(SearchActivity.this, "Base de datos actualizada...", Toast.LENGTH_LONG).show();
         Intent goToNextActivity = new Intent(getApplicationContext(), VolleyActivity.class);
         startActivity(goToNextActivity);
     }
@@ -124,7 +118,7 @@ public class SearchActivity extends AppCompatActivity {
         i.putExtra("user_id", resultUsers.get(adapterPosition).user_id);
         i.putExtra("profile_image", resultUsers.get(adapterPosition).profile_image);
         i.putExtra("user_tag", resultUsers.get(adapterPosition).user_tag);
-        i.putExtra("name", resultUsers.get(adapterPosition).user_name);
+        i.putExtra("user_name", resultUsers.get(adapterPosition).user_name);
         i.putExtra("last_name", resultUsers.get(adapterPosition).last_name);
         i.putExtra("status", resultUsers.get(adapterPosition).status);
         i.putExtra("user_type", resultUsers.get(adapterPosition).user_type);

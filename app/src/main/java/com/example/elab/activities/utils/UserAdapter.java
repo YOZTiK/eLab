@@ -16,6 +16,8 @@ import com.example.elab.database.User;
 import com.example.elab.main.activities.SearchActivity;
 import com.squareup.picasso.Picasso;
 
+import org.w3c.dom.Text;
+
 import java.util.List;
 
 
@@ -36,11 +38,12 @@ public class UserAdapter extends RecyclerView.Adapter {
             Picasso.get()
                     .load(u.profile_image)
                     .into(pHolder.productImage);
-            pHolder.productName.setText(u.user_tag);
+            pHolder.nameTV.setText(u.user_name);
+            pHolder.tagTV.setText(u.user_tag);
             pHolder.productRating.setRating(u.ranking);
 
         }else{
-            pHolder.productName.setText("Producto no encontrado");
+            pHolder.nameTV.setText("Error de usuario...");
         }
     }
 
@@ -53,20 +56,22 @@ public class UserAdapter extends RecyclerView.Adapter {
     }
 
     class UserViewHolder extends RecyclerView.ViewHolder{
-        private TextView productName;
+        private TextView nameTV;
+        private TextView tagTV;
         private ImageView productImage;
         private  RatingBar productRating;
 
         public UserViewHolder(View itemView){
             super(itemView);
             // change this!
-            productName = itemView.findViewById(R.id.recyclerCompanyName);
+            nameTV = itemView.findViewById(R.id.userNameRecyclerText);
+            tagTV = itemView.findViewById(R.id.userTagRecyclerText);
             productImage = itemView.findViewById(R.id.recyclerCompanyThumbnail);
             productRating = itemView.findViewById(R.id.recyclerCompanyRating);
             itemView.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
-                    Log.d("CLICK!!" , "CLICKED ON ME: " + productName.getText());
+                    Log.d("CLICK!!" , "CLICKED ON ME: " + nameTV.getText());
                     callTo.goToNextScreen(getAdapterPosition());
                 }
             });

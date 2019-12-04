@@ -37,8 +37,8 @@ public class VolleyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_volley);
 
-        getJsonRequest();
-        //getDataFromFirebase();
+        //getJsonRequest();
+        getDataFromFirebase();
     }
 
     public void getJsonRequest() {
@@ -125,7 +125,7 @@ public class VolleyActivity extends AppCompatActivity {
 
                     String bachelor_degree = ds.child("bachelor_degree").getValue(String.class);
                     String last_name = ds.child("last_name").getValue(String.class);
-                    String name = ds.child("name").getValue(String.class);
+                    String name = ds.child("user_name").getValue(String.class);
                     String profile_image = ds.child("profile_image").getValue(String.class);
                     int ranking = ds.child("ranking").getValue(Integer.class);
                     String status = ds.child("status").getValue(String.class);
@@ -133,13 +133,15 @@ public class VolleyActivity extends AppCompatActivity {
                     String user_tag = ds.child("user_tag").getValue(String.class);
                     String user_type = ds.child("user_type").getValue(String.class);
 
-                    System.out.println("Received in detail activity: "+user_id+" "+profile_image+" "+user_tag+" "+name+" "+last_name+" "+status+" "+user_type+" "+bachelor_degree+" "+ranking);
+                    System.out.println("Adding: " + user_id + "\n" + profile_image + "\n" +
+                            user_tag + "\n" + name + "\n" + last_name + "\n" + status + "\n" + user_type + "\n" + bachelor_degree + "\n" + ranking);
 
                     User e = new User();
                     e.user_id = user_id;
                     e.profile_image = profile_image;
                     e.user_tag = user_tag;
                     e.user_name = name;
+                    System.out.println("NAME RECEIVED : "+e.user_name);
                     e.last_name = last_name;
                     e.status = status;
                     e.user_type = user_type;

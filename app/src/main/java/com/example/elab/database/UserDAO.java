@@ -20,9 +20,9 @@ public interface UserDAO {
     @Update
     public void update(User... users);
 
-    @Query ("UPDATE User SET user_tag=:profile_image, user_name=:user_tag, profile_image=:user_name, profile_image=:last_name, profile_image=:status, profile_image=:user_type, profile_image=:bachelor_degree WHERE user_id=:user_id")
+    /*@Query ("UPDATE User SET profile_image=:profile_image, user_tag=:user_tag, user_name=:user_name, last_name=:last_name, profile_image=:profile_image, user_type=:user_type, bachelor_degree=:bachelor_degree WHERE user_id=:user_id")
     public void updateUser(String user_id, String profile_image, String user_tag, String user_name, String last_name, String status, String user_type, String bachelor_degree);
-
+    */
     @Delete
     public void deleteProduct(User... users);
 

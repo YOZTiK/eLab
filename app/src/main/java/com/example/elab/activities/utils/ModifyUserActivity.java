@@ -22,7 +22,7 @@ public class ModifyUserActivity extends AppCompatActivity {
     String user_id;
     String profile_image;
     String user_tag;
-    String name;
+    String user_name;
     String last_name;
     String status;
     String user_type;
@@ -49,7 +49,7 @@ public class ModifyUserActivity extends AppCompatActivity {
         user_id = ""+getIntent().getExtras().getString("user_id");
         profile_image = getIntent().getExtras().getString("profile_image");
         user_tag = getIntent().getExtras().getString("user_tag");
-        name = getIntent().getExtras().getString("name");
+        user_name = getIntent().getExtras().getString("user_name");
         last_name = getIntent().getExtras().getString("last_name");
         status = getIntent().getExtras().getString("status");
         user_type = getIntent().getExtras().getString("user_type");
@@ -64,7 +64,7 @@ public class ModifyUserActivity extends AppCompatActivity {
         ratingBar = findViewById(R.id.ratingBar);
         imageView = findViewById(R.id.userImage);
 
-        nameET.setText(name);
+        nameET.setText(user_name);
         lastNameET.setText(last_name);
         statusET.setText(status);
         userTypeET.setText(user_type);
@@ -73,13 +73,6 @@ public class ModifyUserActivity extends AppCompatActivity {
                 .load(profile_image)
                 .into(imageView);
         ratingBar.setRating(ranking);
-        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-            public void onRatingChanged(RatingBar ratingBar, float rating,
-                                        boolean fromUser) {
-                UpdateTask ut = new UpdateTask(getApplicationContext(), null, user_id, (int) ratingBar.getRating());
-                ut.execute();
-            }
-        });
     }
 
     public void saveModifiedUser(View view) {
@@ -90,7 +83,7 @@ public class ModifyUserActivity extends AppCompatActivity {
                 userTypeET.getText().length() == 0 ||
                 bachelorDegreeET.getText().length() == 0
         ){
-            Toast.makeText(ModifyUserActivity.this, "All values must be filled!", Toast.LENGTH_LONG).show();
+            Toast.makeText(ModifyUserActivity.this, "Hay un valor en blanco...", Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -106,6 +99,6 @@ public class ModifyUserActivity extends AppCompatActivity {
                 (int)ratingBar.getRating()
         );
         mDatabase.child("gacmers").child(gacmer.user_id).setValue(gacmer);
-        Toast.makeText(ModifyUserActivity.this, "User updated successfully!", Toast.LENGTH_LONG).show();
+        Toast.makeText(ModifyUserActivity.this, "Usuario actualizado!", Toast.LENGTH_LONG).show();
     }
 }

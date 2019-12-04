@@ -128,7 +128,7 @@ public class LoginActivity extends AppCompatActivity {
                                     if (!task.isSuccessful()) {
                                         // there was an error
                                         existInDatabase = false;
-                                        Toast.makeText(LoginActivity.this, "User does not exists...", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(LoginActivity.this, "Error en el usuario o contraseña...", Toast.LENGTH_LONG).show();
                                         return;
                                     } else {
                                         existInDatabase = true;
@@ -219,7 +219,7 @@ public class LoginActivity extends AppCompatActivity {
                                 if (!task.isSuccessful()) {
                                     // there was an error
                                     existInDatabase = false;
-                                    Toast.makeText(LoginActivity.this, "Wrong username or password!", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(LoginActivity.this, "Error en el usuario o contraseña...", Toast.LENGTH_LONG).show();
                                 } else {
                                     existInDatabase = true;
                                     Intent goToNextActivity = new Intent(getApplicationContext(), InfoActivity.SplashAct.class);

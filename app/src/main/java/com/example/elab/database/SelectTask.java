@@ -25,6 +25,7 @@ public class SelectTask extends AsyncTask<User,Void, List<User>> {
 
         //If the database is empty, insert all the products.
 //        db.userDao().deleteProduct();
+        /*
         if(db.userDao().getDatabaseCount() <= 0){
             db.userDao().insertUser(params);
         }else{
@@ -32,7 +33,8 @@ public class SelectTask extends AsyncTask<User,Void, List<User>> {
             for(int i = 0; i< params.length; i++){
                 db.userDao().updateUser(params[i].user_id, params[i].profile_image, params[i].user_tag, params[i].user_name, params[i].last_name, params[i].status, params[i].user_type, params[i].bachelor_degree);
             }
-        }
+        }*/
+        db.userDao().insertUser(params);
 
         return null;
     }
